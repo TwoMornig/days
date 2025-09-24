@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.17.106.39:3306/stiee_basic?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: production
+    password: Stiee123@
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 32
+      auto-commit: true
+      pool-name: HikariCorePool
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: select TABLE_NAME from information_schema.tables limit 1
+      connection-init-sql: SET NAMES utf8mb4
+  data:
+    redis:
+      host: 172.17.200.79
+      password: Stiee123@
+      port: 6379
+      database: 0
+      connect-timeout: 30000
+      timeout: 10000
+      lettuce:
+        pool:
+          min-idle: 16
+          max-idle: 32
+          max-active: 128
+          max-wait: 30000
+
+
