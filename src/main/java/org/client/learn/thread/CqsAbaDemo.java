@@ -21,7 +21,6 @@ public class CqsAbaDemo {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
             }
-
             boolean success = ref.compareAndSet(oldValue, "C", oldStamp, oldStamp + 1);
             System.out.println("👤 线程1 CAS 是否成功？" + success + "，当前值：" + ref.getReference() + "，版本：" + ref.getStamp());
         });
