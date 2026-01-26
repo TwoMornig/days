@@ -1,4 +1,4 @@
-package org.client.learn.thread;
+package org.client.learn.thread.example;
 
 public class ThreadStateUnit {
     public static void main(String[] args) throws InterruptedException {

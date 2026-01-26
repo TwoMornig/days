@@ -1,7 +1,4 @@
-package org.client.learn.thread;
-
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
+package org.client.learn.thread.example;
 
 /**
  * 定时任务线程池

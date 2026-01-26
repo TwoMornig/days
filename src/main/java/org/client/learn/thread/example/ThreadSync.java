@@ -1,4 +1,4 @@
-package org.client.learn.thread;
+package org.client.learn.thread.example;
 
 import lombok.extern.slf4j.Slf4j;
 

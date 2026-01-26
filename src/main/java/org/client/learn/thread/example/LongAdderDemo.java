@@ -1,4 +1,4 @@
-package org.client.learn.thread;
+package org.client.learn.thread.example;
 
 import java.util.concurrent.atomic.LongAdder;
 

@@ -1,6 +1,5 @@
-package org.client.learn.thread;
+package org.client.learn.thread.example;
 
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**

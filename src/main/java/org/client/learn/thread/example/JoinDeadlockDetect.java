@@ -1,4 +1,4 @@
-package org.client.learn.thread;
+package org.client.learn.thread.example;
 
 /**
  * 死锁demo

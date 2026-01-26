@@ -1,4 +1,4 @@
-package org.client.learn.thread;
+package org.client.learn.thread.example;
 
 public class ThreadUnit {
     public static void main(String[] args) {
