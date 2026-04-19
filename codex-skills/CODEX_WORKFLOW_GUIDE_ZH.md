@@ -4,6 +4,32 @@
 
 ## Skill 一览
 
+### `prd-dev-zh`
+
+用途：
+
+- 把 PRD 翻译成工程任务
+- 分析新功能应该落在哪些模块
+- 先出开发方案，再进入实现
+- 在实现后补 review 和上线前检查
+
+适合什么时候用：
+
+- 你拿到一个新功能 PRD
+- 你不想一上来就写代码
+- 你希望先把风险、边界和落点理清
+- 你希望 Codex 帮你走完整开发流程
+
+使用 demo：
+
+```text
+用 prd-dev-zh 处理这个 PRD。先结合代码库做工程化分析，输出功能落点、影响范围、最小可实现方案、风险点、待确认问题和测试要点。确认后再按最小改动实现。
+```
+
+```text
+按 prd-dev-zh 看这个新功能需求，先不要写代码，先把它拆成开发方案和验证方案。
+```
+
 ### `bug-fix-zh`
 
 用途：
@@ -241,3 +267,44 @@ description: 当用户想做什么事情、希望你按什么风格工作时，�
 - 推荐触发示例
 
 这次升级后的 3 个 skill，基本就是按这个结构整理的。
+
+## `prd-dev-zh` 推荐使用方式
+
+这个 skill 最适合拿到新功能 PRD 时使用。推荐按 4 段来触发，而不是一句“直接做”。
+
+### 阶段 1：PRD 分析
+
+```text
+用 prd-dev-zh 处理这个 PRD。先不要写代码，先结合当前代码库输出：
+1. 功能落点
+2. 影响范围
+3. 最小可实现闭环
+4. 风险点
+5. 待确认问题
+6. 测试要点
+```
+
+### 阶段 2：开发方案
+
+```text
+基于刚才的分析，继续按 prd-dev-zh 给我一个最小改动开发方案。要求按“改动点、实现顺序、验证方案”组织，优先复用现有逻辑，不要大重构。
+```
+
+### 阶段 3：开始实现
+
+```text
+按刚才的方案直接实现，继续按 prd-dev-zh 的方式工作。先看相关代码再动手，优先最小改动，改完跑相关验证。
+```
+
+### 阶段 4：实现后检查
+
+```text
+现在先不要继续扩展功能，按 prd-dev-zh 从 review 和上线前检查角度再过一遍。重点看行为回归、边界条件、权限风险、测试缺口和明显性能风险。
+```
+
+## 文件位置
+
+- [prd-dev-zh/SKILL.md](/Users/dmoon/IdeaProjects/days/codex-skills/prd-dev-zh/SKILL.md)
+- [bug-fix-zh/SKILL.md](/Users/dmoon/IdeaProjects/days/codex-skills/bug-fix-zh/SKILL.md)
+- [review-zh/SKILL.md](/Users/dmoon/IdeaProjects/days/codex-skills/review-zh/SKILL.md)
+- [minimal-change-zh/SKILL.md](/Users/dmoon/IdeaProjects/days/codex-skills/minimal-change-zh/SKILL.md)
