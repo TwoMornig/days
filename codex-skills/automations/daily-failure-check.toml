@@ -1,0 +1,12 @@
+name = "Daily Failure Check"
+kind = "cron"
+status = "ACTIVE"
+executionEnvironment = "local"
+model = "gpt-5.2"
+reasoningEffort = "medium"
+cwds = ["/Users/dmoon/IdeaProjects/days"]
+rrule = "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA,SU;BYHOUR=10;BYMINUTE=0"
+
+prompt = """
+检查当前项目最近的失败信息或失败线索，优先关注测试失败、构建失败、明显报错和高影响问题。输出中文摘要，并按优先级列出最值得先处理的 3 个问题；如果当前没有足够信息可判断，也请明确说明缺少什么。
+"""

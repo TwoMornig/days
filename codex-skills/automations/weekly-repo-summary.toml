@@ -1,0 +1,12 @@
+name = "Weekly Repo Summary"
+kind = "cron"
+status = "ACTIVE"
+executionEnvironment = "local"
+model = "gpt-5.2"
+reasoningEffort = "medium"
+cwds = ["/Users/dmoon/IdeaProjects/days"]
+rrule = "FREQ=WEEKLY;BYDAY=MO;BYHOUR=9;BYMINUTE=0"
+
+prompt = """
+检查当前仓库最近 7 天的重要代码变更，输出中文摘要。重点包括：主要功能改动、潜在高风险改动、测试变化、最近变化频繁的模块。结果保持简洁，优先帮助开发者快速判断哪里值得关注。如果信息不足，明确说明缺少什么，不要编造。
+"""

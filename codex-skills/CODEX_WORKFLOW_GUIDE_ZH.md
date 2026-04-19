@@ -1,6 +1,6 @@
 # Codex Workflow Guide ZH
 
-这份文件用来说明当前目录下每个 skill 的用途、推荐使用方式，以及两个 automation demo 的实际写法。
+这份文件用来说明当前目录下每个 skill 的用途、推荐使用方式，以及两个 automation 的真实配置草案。
 
 ## Skill 一览
 
@@ -82,7 +82,7 @@
 
 ## Automation Demo
 
-下面两个 automation 是推荐给你的第一批自动化任务。这里先给你“任务定义”和“可直接复用的 prompt”，你后面如果要，我可以继续帮你在 Codex 里真正创建它们。
+下面两个 automation 是推荐给你的第一批自动化任务。我已经额外把它们写成可复用的 TOML 草案，放在 `codex-skills/automations/` 目录下，方便你在 IDEA 里直接查看和调整。
 
 ### `Weekly Repo Summary automation`
 
@@ -110,6 +110,10 @@
 - 登录模块新增校验，但测试覆盖偏少
 - 订单模块主要是整理代码，未见明确行为变化证据
 
+对应配置草案：
+
+- [weekly-repo-summary.toml](/Users/dmoon/IdeaProjects/days/codex-skills/automations/weekly-repo-summary.toml)
+
 ### `Daily Failure Check automation`
 
 用途：
@@ -135,9 +139,13 @@
 - 第二优先级：登录构建警告升级为错误，影响主分支合并
 - 第三优先级：订单模块有间歇性失败，需要进一步复现
 
+对应配置草案：
+
+- [daily-failure-check.toml](/Users/dmoon/IdeaProjects/days/codex-skills/automations/daily-failure-check.toml)
+
 ## 怎么根据自己的习惯生成 Skill
 
-可以，直接写中文就可以。Skill 本质上就是一个 `SKILL.md` 文件，不要求你一定用英文。
+可以，直接写中文就可以。Skill 本质上就是一个 `SKILL.md` 文件，不要求你一定用英文。对你来说，先把中文写顺比追求术语更重要。
 
 最简单的写法就是三段：
 
@@ -215,4 +223,21 @@ description: 当用户想做什么事情、希望你按什么风格工作时，�
 - 先让它能稳定工作，再慢慢补细节
 - 不要一开始写成“大而全总说明书”
 
-如果你愿意，下一步我可以继续帮你把这 3 个 skill 再升级一版，补成“更像真正团队内部 SOP”的版本。
+## 什么时候从“普通 skill”升级成“团队 SOP skill”
+
+当你发现下面任意一类情况频繁出现，就值得升级：
+
+- 你总在重复补充同样的边界要求
+- 你希望输出格式稳定
+- 你想减少 AI 在任务里的自由发挥
+- 你已经知道这一类任务的固定流程
+
+团队 SOP 版 skill 往往会多出这些部分：
+
+- 输入检查
+- 标准执行流程
+- 风险边界
+- 输出要求
+- 推荐触发示例
+
+这次升级后的 3 个 skill，基本就是按这个结构整理的。
